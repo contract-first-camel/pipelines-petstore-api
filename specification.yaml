@@ -212,13 +212,6 @@ paths:
                 - pet
             parameters:
                 -
-                    name: api_key
-                    description: ''
-                    schema:
-                        type: string
-                    in: header
-                    required: false
-                -
                     name: petId
                     description: Pet id to delete
                     schema:
