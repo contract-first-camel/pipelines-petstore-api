@@ -16,21 +16,12 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/Pet'
-                    application/xml:
-                        schema:
-                            $ref: '#/components/schemas/Pet'
-                    application/x-www-form-urlencoded:
-                        schema:
-                            $ref: '#/components/schemas/Pet'
                 required: true
             tags:
                 - pet
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/Pet'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Pet'
@@ -56,21 +47,12 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/Pet'
-                    application/xml:
-                        schema:
-                            $ref: '#/components/schemas/Pet'
-                    application/x-www-form-urlencoded:
-                        schema:
-                            $ref: '#/components/schemas/Pet'
                 required: true
             tags:
                 - pet
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/Pet'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Pet'
@@ -106,11 +88,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                type: array
-                                items:
-                                    $ref: '#/components/schemas/Pet'
                         application/json:
                             schema:
                                 type: array
@@ -145,11 +122,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                type: array
-                                items:
-                                    $ref: '#/components/schemas/Pet'
                         application/json:
                             schema:
                                 type: array
@@ -182,9 +154,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/Pet'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Pet'
@@ -268,47 +237,6 @@ paths:
             operationId: deletePet
             summary: Deletes a pet
             description: ''
-    '/pet/{petId}/uploadImage':
-        post:
-            requestBody:
-                content:
-                    application/octet-stream:
-                        schema:
-                            format: binary
-                            type: string
-            tags:
-                - pet
-            parameters:
-                -
-                    name: petId
-                    description: ID of pet to update
-                    schema:
-                        format: int64
-                        type: integer
-                    in: path
-                    required: true
-                -
-                    name: additionalMetadata
-                    description: Additional Metadata
-                    schema:
-                        type: string
-                    in: query
-                    required: false
-            responses:
-                '200':
-                    content:
-                        application/json:
-                            schema:
-                                $ref: '#/components/schemas/ApiResponse'
-                    description: successful operation
-            security:
-                -
-                    petstore_auth:
-                        - 'write:pets'
-                        - 'read:pets'
-            operationId: uploadFile
-            summary: uploads an image
-            description: ''
     /store/inventory:
         get:
             tags:
@@ -334,12 +262,6 @@ paths:
             requestBody:
                 content:
                     application/json:
-                        schema:
-                            $ref: '#/components/schemas/Order'
-                    application/xml:
-                        schema:
-                            $ref: '#/components/schemas/Order'
-                    application/x-www-form-urlencoded:
                         schema:
                             $ref: '#/components/schemas/Order'
             tags:
@@ -372,9 +294,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/Order'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/Order'
@@ -418,21 +337,12 @@ paths:
                     application/json:
                         schema:
                             $ref: '#/components/schemas/User'
-                    application/xml:
-                        schema:
-                            $ref: '#/components/schemas/User'
-                    application/x-www-form-urlencoded:
-                        schema:
-                            $ref: '#/components/schemas/User'
             tags:
                 - user
             responses:
                 default:
                     content:
                         application/json:
-                            schema:
-                                $ref: '#/components/schemas/User'
-                        application/xml:
                             schema:
                                 $ref: '#/components/schemas/User'
                     description: successful operation
@@ -453,9 +363,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/User'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/User'
@@ -498,9 +405,6 @@ paths:
                                 type: string
                             description: date in UTC when toekn expires
                     content:
-                        application/xml:
-                            schema:
-                                type: string
                         application/json:
                             schema:
                                 type: string
@@ -535,9 +439,6 @@ paths:
             responses:
                 '200':
                     content:
-                        application/xml:
-                            schema:
-                                $ref: '#/components/schemas/User'
                         application/json:
                             schema:
                                 $ref: '#/components/schemas/User'
@@ -554,12 +455,6 @@ paths:
                 description: Update an existent user in the store
                 content:
                     application/json:
-                        schema:
-                            $ref: '#/components/schemas/User'
-                    application/xml:
-                        schema:
-                            $ref: '#/components/schemas/User'
-                    application/x-www-form-urlencoded:
                         schema:
                             $ref: '#/components/schemas/User'
             tags:
