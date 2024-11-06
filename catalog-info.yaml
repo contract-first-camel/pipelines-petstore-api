@@ -1,0 +1,24 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: "petstore"
+  title: "petstore"
+  description: "Petstore API"
+  annotations:
+    backstage.io/spectral-ruleset-url: https://raw.githubusercontent.com/contract-first-camel/spectral-rules/main/ruleset.yaml
+  links:
+    - url: https://registry-apicurio-registry.apps.cluster-m22mk.m22mk.sandbox2534.opentlc.com/ui/artifacts/com.redhat/petstore/versions/latest
+      title: Apicurio Registry
+      icon: web
+    - url: https://microcks-microcks.apps.cluster-m22mk.m22mk.sandbox2534.opentlc.com/#/services?name=petstore
+      title: Microcks
+    - url: https://microcks-microcks.apps.cluster-m22mk.m22mk.sandbox2534.opentlc.com/rest/ratings/v1
+      title: Mock
+      icon: web
+spec:
+  type: openapi
+  system: system:default/pipelines
+  owner: "group:default/backstage-admins"
+  lifecycle: production
+  definition:
+    $openapi: https://github.com/contract-first-camel/pipelines-petstore-api/blob/main/specification.yaml

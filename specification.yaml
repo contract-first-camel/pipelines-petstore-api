@@ -1,0 +1,10 @@
+openapi: 3.0.3
+info:
+  title: petstore
+  description: |-
+    Petstore API
+  version: 'v1'
+servers:
+  - url: "http://localhost:8080"
+  - url: "https://microcks-microcks.apps.cluster-m22mk.m22mk.sandbox2534.opentlc.com/rest/petstore/v1"
+paths: {}
